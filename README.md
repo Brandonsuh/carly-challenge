@@ -5,6 +5,8 @@ The main project repository is for Task 1
 
 I have created an Azure SQL database and deployed the project on Azure.
 
+The domain and IP Whitelisting can be done on the Azure/AWS platforms, e.g. firewall settings or domain/IP filtering. 
+
 The following Restful APIs are implemented in Json format.
 
 Get all the bookings
