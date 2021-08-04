@@ -62,9 +62,12 @@ Report API
 https://carly-challenge.azurewebsites.net/api/bookings/report
 
 Body example:
-{	
-	"startdate": "01/01/2021",
-	"enddate": "01/01/2022"
+{
+	
+	"startdate":"01/01/2021",
+
+	"enddate":"01/01/2022"
+
 }
 
 Please kindly note the business logic for this Reporting API is in the controller method.
