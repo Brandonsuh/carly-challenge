@@ -8,14 +8,17 @@ I have created an Azure SQL database and deployed the project on Azure.
 The following Restful APIs are implemented in Json format.
 
 Get all the bookings
+
 [HTTP GET]
 https://carly-challenge.azurewebsites.net/api/bookings
 
 Get the particular booking
+
 [HTTP GET]
 https://carly-challenge.azurewebsites.net/api/bookings/{id}
 
 Create a booking
+
 [HTTP POST]
 https://carly-challenge.azurewebsites.net/api/bookings
 
@@ -31,6 +34,7 @@ Body example:
 }
 
 Update a booking
+
 [HTTP PUT]
 https://carly-challenge.azurewebsites.net/api/bookings/{id}
 
@@ -48,15 +52,17 @@ Body example:
 }
 
 Delete a booking
+
 [HTTP DELETE]
 https://carly-challenge.azurewebsites.net/api/bookings/{id}
 
 Report API
+
 [HTTP POST]
 https://carly-challenge.azurewebsites.net/api/bookings/report
 
 Body example:
-{
+{	
 	"startdate": "01/01/2021",
 	"enddate": "01/01/2022"
 }

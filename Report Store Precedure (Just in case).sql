@@ -4,7 +4,7 @@ CREATE PROCEDURE Report
 AS
 BEGIN
 	DECLARE @result TABLE (
-			[State] [varchar](20) NULL
+		    [State] [varchar](20) NULL
 		  , [Amount] [decimal](8, 2) NULL
 		  , [Created] [datetime] NULL
 		  , [Month] [varchar](3) NULL
@@ -13,7 +13,7 @@ BEGIN
 		  , [GrandTotal] [BIT]);
 
 	DECLARE @month_result TABLE (
-			[State] [varchar](20) NULL
+		    [State] [varchar](20) NULL
 		  , [Amount] [decimal](8, 2) NULL
 		  , [Created] [datetime] NULL
 		  , [Month] [varchar](3) NULL
@@ -22,7 +22,7 @@ BEGIN
 		  , [GrandTotal] [BIT]);
 
 	DECLARE @state_result TABLE (
-			[State] [varchar](20) NULL
+		    [State] [varchar](20) NULL
 		  , [Amount] [decimal](8, 2) NULL
 		  , [Created] [datetime] NULL
 		  , [Month] [varchar](3) NULL
@@ -31,7 +31,7 @@ BEGIN
 		  , [GrandTotal] [BIT]);
 
 	DECLARE @total_result TABLE (
-			[State] [varchar](20) NULL
+		    [State] [varchar](20) NULL
 		  , [Amount] [decimal](8, 2) NULL
 		  , [Created] [datetime] NULL
 		  , [Month] [varchar](3) NULL
@@ -41,46 +41,46 @@ BEGIN
 
 	INSERT INTO @result
 	SELECT [Customer].[State]
-		 , [Booking].[Amount]
-		 , [Booking].[Created]
-		 , FORMAT(([Booking].[Created]), 'MMM') AS [Month]
-		 , 0 AS [MonthTotal]
-		 , 0 AS [StateTotal]
-		 , 0 AS [GrandTotal]
+	     , [Booking].[Amount]
+	     , [Booking].[Created]
+	     , FORMAT(([Booking].[Created]), 'MMM') AS [Month]
+	     , 0 AS [MonthTotal]
+	     , 0 AS [StateTotal]
+	     , 0 AS [GrandTotal]
 	FROM [Carly Challenge].[dbo].[tblBookingTest] [Booking]
 	JOIN [Carly Challenge].[dbo].[tblCustomerTest] [Customer] ON [Customer].[CustomerID] = [Booking].[CustomerID]
 	WHERE [Booking].[Created] >= @start_date AND [Booking].[Created] <= @end_date
 
 	INSERT INTO @month_result
 	SELECT [State]
-		 , SUM([Amount]) AS [Amount]
-		 , MAX([Created]) AS [Created]
-		 , [Month]
-		 , 1 AS [MonthTotal]
-		 , 0 AS [StateTotal]
-		 , 0 AS [GrandTotal]
+	     , SUM([Amount]) AS [Amount]
+	     , MAX([Created]) AS [Created]
+	     , [Month]
+	     , 1 AS [MonthTotal]
+	     , 0 AS [StateTotal]
+	     , 0 AS [GrandTotal]
 	FROM @result
 	GROUP BY [State], [Month]
 
 	INSERT INTO @state_result
 	SELECT [State]
-		 , SUM([Amount]) AS [Amount]
-		 , MAX([Created]) AS [Created]
-		 , '' AS [Month]
-		 , 1 AS [MonthTotal]
-		 , 1 AS [StateTotal]
-		 , 0 AS [GrandTotal]
+	     , SUM([Amount]) AS [Amount]
+	     , MAX([Created]) AS [Created]
+	     , '' AS [Month]
+	     , 1 AS [MonthTotal]
+	     , 1 AS [StateTotal]
+	     , 0 AS [GrandTotal]
 	FROM @result
 	GROUP BY [State]
 
 	INSERT INTO @total_result
 	SELECT Max([State])
-		 , SUM([Amount]) AS [Amount]
-		 , MAX([Created]) AS [Created]
-		 , '' AS [Month]
-		 , 1 AS [MonthTotal]
-		 , 1 AS [StateTotal]
-		 , 1 AS [GrandTotal]
+	     , SUM([Amount]) AS [Amount]
+	     , MAX([Created]) AS [Created]
+	     , '' AS [Month]
+	     , 1 AS [MonthTotal]
+	     , 1 AS [StateTotal]
+	     , 1 AS [GrandTotal]
 	FROM @result
 
 	INSERT INTO @result
