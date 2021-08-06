@@ -9,17 +9,17 @@ The domain and IP Whitelisting can be done on the Azure/AWS platforms, e.g. fire
 
 The following Restful APIs are implemented in Json format.
 
-##Get all the bookings
+## Get all the bookings
 
 [HTTP GET]
 https://carly-challenge.azurewebsites.net/api/bookings
 
-##Get the particular booking
+## Get the particular booking
 
 [HTTP GET]
 https://carly-challenge.azurewebsites.net/api/bookings/{id}
 
-##Create a booking
+## Create a booking
 
 [HTTP POST]
 https://carly-challenge.azurewebsites.net/api/bookings
@@ -35,7 +35,7 @@ Body example:
 	"created": "2021-08-01"
 }
 
-##Update a booking
+## Update a booking
 
 [HTTP PUT]
 https://carly-challenge.azurewebsites.net/api/bookings/{id}
@@ -54,12 +54,12 @@ Body example:
 
 }
 
-##Delete a booking
+## Delete a booking
 
 [HTTP DELETE]
 https://carly-challenge.azurewebsites.net/api/bookings/{id}
 
-##Report API
+## Report API
 
 [HTTP POST]
 https://carly-challenge.azurewebsites.net/api/bookings/report
