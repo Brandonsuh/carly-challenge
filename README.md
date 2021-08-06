@@ -25,6 +25,7 @@ Create a booking
 https://carly-challenge.azurewebsites.net/api/bookings
 
 Body example:
+
 {
 
 	"customerId": 10,
@@ -41,6 +42,7 @@ Update a booking
 https://carly-challenge.azurewebsites.net/api/bookings/{id}
 
 Body example:
+
 {
 	
 	"bookingId":24,
@@ -64,6 +66,7 @@ Report API
 https://carly-challenge.azurewebsites.net/api/bookings/report
 
 Body example:
+
 {
 	
 	"startdate":"01/01/2021",
