@@ -11,17 +11,20 @@ The following Restful APIs are implemented in Json format.
 
 ## Get all the bookings
 
-[HTTP GET]
+###### [HTTP GET]
+
 https://carly-challenge.azurewebsites.net/api/bookings
 
 ## Get the particular booking
 
-[HTTP GET]
+###### [HTTP GET]
+
 https://carly-challenge.azurewebsites.net/api/bookings/{id}
 
 ## Create a booking
 
-[HTTP POST]
+###### [HTTP POST]
+
 https://carly-challenge.azurewebsites.net/api/bookings
 
 Body example:
@@ -37,7 +40,8 @@ Body example:
 
 ## Update a booking
 
-[HTTP PUT]
+###### [HTTP PUT]
+
 https://carly-challenge.azurewebsites.net/api/bookings/{id}
 
 Body example:
@@ -56,12 +60,14 @@ Body example:
 
 ## Delete a booking
 
-[HTTP DELETE]
+###### [HTTP DELETE]
+
 https://carly-challenge.azurewebsites.net/api/bookings/{id}
 
 ## Report API
 
-[HTTP POST]
+###### [HTTP POST]
+
 https://carly-challenge.azurewebsites.net/api/bookings/report
 
 Body example:
